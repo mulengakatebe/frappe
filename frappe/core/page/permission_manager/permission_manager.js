@@ -218,6 +218,9 @@ frappe.PermissionEngine = Class.extend({
 			me.rights.forEach(r => {
 				if (!d.is_submittable && ['submit', 'cancel', 'amend'].includes(r)) return;
 				me.add_check(perm_container, d, r);
+				else
+				if (d.is_submittable && d.parent=="Sales Invoice" && ['delete', 'cancel'].includes(r)) return;			 
+				me.add_check(perm_container, d, r);		
 			});
 
 			// buttons
