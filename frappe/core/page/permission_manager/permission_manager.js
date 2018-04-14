@@ -219,7 +219,7 @@ frappe.PermissionEngine = Class.extend({
 				if (!d.is_submittable && ['submit', 'cancel', 'amend'].includes(r)) return;
 				me.add_check(perm_container, d, r);
 				else
-				if (d.is_submittable && d.parent=="Sales Invoice" && ['delete', 'cancel'].includes(r)) return;			 
+				if (d.parent=="Sales Invoice" && ['delete', 'amend', 'cancel'].includes(r)) return;			 
 				me.add_check(perm_container, d, r);		
 			});
 
